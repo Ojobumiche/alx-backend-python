@@ -9,10 +9,9 @@ async def wait_random(max_delay: int = 10) -> float:
     return random_delay
 
 
-# Example usage
-async def main():
-    result = await wait_random()
-    print(f"The random delay is: {result} seconds")
 
+wait_random = __import__('0-basic_async_syntax').wait_random
 
-asyncio.run(main())
+print(asyncio.run(wait_random()))
+print(asyncio.run(wait_random(5)))
+print(asyncio.run(wait_random(15)))
